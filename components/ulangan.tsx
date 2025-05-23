@@ -72,9 +72,9 @@ const App = () => {
     if (selectedItem) {
       axios
         .post('http://192.168.0.34/ulangan/update.php', {
-          id_buku: selectedItem.id_buku,
-          judul: selectedItem.judul,
-          penulis: selectedItem.penulis,
+          id: selectedItem.id_buku,
+          JudulBuku: selectedItem.judul,
+          Penulis: selectedItem.penulis,
         })
         .then(() => {
           Alert.alert('Sukses', 'Data berhasil diperbarui!');
