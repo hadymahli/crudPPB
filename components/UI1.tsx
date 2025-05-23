@@ -1,107 +1,93 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, TouchableOpacity, Text, ScrollView, TextInput, StyleSheet,  Alert, Modal, } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
 
-const UI1 = () => {
-    const [name, setName] = useState('');
-
+const App = () => {
     return (
-
-        <View>
-            <View style={styles.lingkaran1} />
-            <View style={styles.lingkaran2} />
-            <Text style={styles.label}>input your name!</Text>
-
-
+        <ScrollView>
+            <View>
+                <Text style={styles.judul}>📚 Daftar buku</Text>
+            </View>
             <TextInput
-                style={styles.input}
-                value={name}
-                onChangeText={setName}
-                placeholder="Type your name"
-                placeholderTextColor="#999"
+                style={styles.input1}
+                placeholder="Judul Buku"
+            />
+            <TextInput
+                style={styles.input2}
+                placeholder="Nama Pengarang"
             />
 
+        <TouchableOpacity style={styles.Button}>
+            <Text style={styles.buttonText}>Tambah Buku</Text>
+        </TouchableOpacity>
 
-            <TouchableOpacity style={styles.saveButton}>
-                <Text style={styles.saveText}>SAVE</Text>
-            </TouchableOpacity>
-
-
-            <TouchableOpacity style={styles.nextButton}>
-                <Text style={styles.nextText}>next</Text>
-            </TouchableOpacity>
-        </View>
-
+        </ScrollView>
     );
 };
 
-export default UI1;
+export default App;
 
 const styles = StyleSheet.create({
-    circleContainer: {
-        flexDirection: 'row',
-        marginBottom: 30,
-    },
-    lingkaran1: {
-        top: 130,
-        left: 200,
-        width: 100,
-        height: 100,
-        borderRadius: 40,
-        backgroundColor: '#FAD2CF',
-        marginRight: -30,
-        zIndex: 1,
-    },
-    lingkaran2: {
-        top: 50,
-        left: 150,
-        width: 100,
-        height: 100,
-        borderRadius: 40,
-        backgroundColor: '#008B8B',
-    },
-    label: {
-        fontSize: 16,
-        fontFamily: 'monospace',
-        marginTop: 20,
-        marginBottom: 10,
-    },
-    input: {
-        left: 50,
-        top: 300,
-        width: '80%',
-        height: 40,
-        borderWidth: 1.5,
-        borderRadius: 10,
-        paddingHorizontal: 10,
-        marginBottom: 20,
-    },
-    saveButton: {
-        top: 300,
-        left: 200,
-        height: 40,
-        width: 100,
-        backgroundColor: '#90EE90',
-        paddingVertical: 8,
-        paddingHorizontal: 25,
-        borderRadius: 8,
-        marginBottom: 20,
-    },
-    saveText: {
+    judul: {
+        fontSize: 30,
         fontWeight: 'bold',
-        color: '#000',
+        alignSelf: 'flex-start'
     },
-    nextButton: {
-        top: 400,
-        left: 350,
-        height: 40,
-        width: 90,
-        borderWidth: 1,
-        borderRadius: 8,
-        paddingVertical: 6,
-        paddingHorizontal: 20,
+
+    input1: {
+        borderColor: 'grey',
+        borderWidth: 2,
+        width: 400,
+        height: 50,
+        alignSelf: 'center',
+        marginTop: 10,
+        paddingHorizontal: 10,
+        backgroundColor: '#f2f2f2',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.1,
+        shadowRadius: 6,
+        elevation: 5,
     },
-    nextText: {
-        fontFamily: 'monospace',
-        color: '#000',
+
+    input2: {
+        borderColor: 'grey',
+        borderWidth: 2,
+        width: 400,
+        height: 50,
+        alignSelf: 'center',
+        marginTop: 10,
+        paddingHorizontal: 10,
+        backgroundColor: '#f2f2f2',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.1,
+        shadowRadius: 6,
+        elevation: 5,
     },
-});
+
+    Button: {
+    backgroundColor: '#348feb',
+    width: 400,
+    height: 50,
+    alignSelf: 'center',
+    marginTop: 10,
+    paddingHorizontal: 10,
+    shadowColor: '#2980b9',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    elevation: 5,
+    },
+
+    buttonText :{
+    color: 'white',
+    fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    top: '15'
+    }
+
+})

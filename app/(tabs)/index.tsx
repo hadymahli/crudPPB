@@ -2,12 +2,14 @@ import {View} from 'react-native';
 import Crud from '@/components/Crud';
 import UI1 from '@/components/UI1';
 import UI2 from '@/components/UI2';
+import Ulangan from '@/components/ulangan';
+
 
 
 export default function App() {
   return (
     <View>
-     <Crud/>
+     <Ulangan/>
     </View>
 
   )

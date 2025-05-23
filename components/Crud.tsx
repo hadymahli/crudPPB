@@ -349,13 +349,13 @@ const styles = StyleSheet.create({
   },
 
   kolom1: {
-    width: '90%', // Menyesuaikan lebar sesuai dengan layar
+    width: '90%', 
     height: 50,
     alignSelf: 'center',
     marginTop: 10,
     paddingHorizontal: 15,
     backgroundColor: '#f2f2f2',
-    borderRadius: 25,  // Radius untuk sudut yang lebih halus
+    borderRadius: 25,  
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
